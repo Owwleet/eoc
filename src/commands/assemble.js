@@ -17,7 +17,7 @@ module.exports = function(opts) {
   const target = path.resolve(opts.target);
   return elapsed(async (tracked) => {
     const r = await mvnw(goals().concat(flags(opts)), opts.target, opts.batch);
-    tracked.print(`EO program assembled in ${rel(target)}`);
+    tracked.print(`EO .xmir files from ${rel(path.resolve(opts.target, opts.xmirs))} assembled to .class files in ${rel(path.resolve(opts.target, opts.classes))}`);
     return r;
   });
 };
